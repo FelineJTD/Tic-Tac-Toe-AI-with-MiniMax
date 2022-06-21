@@ -33,13 +33,12 @@ if __name__ == '__main__':
       exit(0)
 
     # AI move
-    move = board.get_best_move("AI")
+    move = board.get_best_move()
     board.make_move(move, "AI")
     # print board
     print("AI's move: " + str(move))
     board.print()
     # check if AI won
     if (board.check_win("AI")):
-      board.print()
       print('AI wins!')
       exit(0)

@@ -88,14 +88,14 @@ class Board:
               best = score
       return best
 
-  def get_best_move(self, player):
+  def get_best_move(self):
     # find the best move for the player
     best = 2
     for i in range(3):
       for j in range(3):
         if (self.blocks[i][j]).isdigit():
           new_board = self.copy()
-          new_board.make_move(i*3+j+1, player)
+          new_board.make_move(i*3+j+1, "AI")
           score = new_board.minimax(new_board, "AI")
           if (score < best):
             best = score
